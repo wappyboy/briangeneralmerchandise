@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { ButtonLink } from "@/components/ui/Button";
@@ -16,7 +19,11 @@ export function HeroSection() {
       className="bg-white px-4 pb-20 pt-32 text-black sm:px-6 lg:px-8 lg:pb-28 lg:pt-40"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-neutral-500">
             Sounds • Lights • Tables • Chairs
           </p>
@@ -45,15 +52,23 @@ export function HeroSection() {
 
           <div className="mt-10 grid gap-3 sm:grid-cols-2">
             {highlights.map((item) => (
-              <div key={item} className="flex items-center gap-2 text-sm text-neutral-700">
+              <div
+                key={item}
+                className="flex items-center gap-2 text-sm text-neutral-700"
+              >
                 <CheckCircle2 className="size-5 text-black" aria-hidden="true" />
                 <span>{item}</span>
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="rounded-[2rem] border border-neutral-200 bg-neutral-100 p-4">
+        <motion.div
+          className="rounded-[2rem] border border-neutral-200 bg-neutral-100 p-4"
+          initial={{ opacity: 0, scale: 0.96, y: 28 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+        >
           <div className="flex aspect-[4/3] items-center justify-center rounded-[1.5rem] bg-black px-6 text-center text-white">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
@@ -69,7 +84,7 @@ export function HeroSection() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

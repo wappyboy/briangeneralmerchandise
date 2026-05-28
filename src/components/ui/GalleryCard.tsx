@@ -9,7 +9,7 @@ type GalleryCardProps = {
 export function GalleryCard({ item }: GalleryCardProps) {
   return (
     <article className="group relative overflow-hidden rounded-3xl bg-neutral-900">
-      <div className="relative aspect-[4/5] overflow-hidden">
+      <div className="relative aspect-4/5 overflow-hidden">
         <Image
           src={item.image}
           alt={item.alt}
@@ -18,7 +18,7 @@ export function GalleryCard({ item }: GalleryCardProps) {
           className="object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
       </div>
 
       <div className="absolute inset-x-0 bottom-0 p-6 text-white">

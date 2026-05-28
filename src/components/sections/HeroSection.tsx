@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-
+import Image from "next/image";
 import { ButtonLink } from "@/components/ui/Button";
 
 const highlights = [
@@ -69,21 +69,30 @@ export function HeroSection() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
         >
-          <div className="flex aspect-[4/3] items-center justify-center rounded-[1.5rem] bg-black px-6 text-center text-white">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
-                Brian&apos;s General Merchandise
-              </p>
+                <div className="group relative aspect-[4/3] overflow-hidden rounded-[1.5rem] transition-all duration-500 hover:scale-[1.02]">
+        <Image
+          src="/bday.jpg"
+          alt="Event setup"
+          fill
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        />
 
-              <h2 className="mt-4 text-3xl font-bold">
-                Reliable Event Equipment Rental
-              </h2>
+        {/* Dark overlay with gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-opacity duration-500 group-hover:from-black/70" />
 
-              <p className="mt-4 text-sm leading-6 text-neutral-300">
-                Add a real event setup photo here later.
-              </p>
-            </div>
+        {/* Content */}
+        <div className="absolute inset-0 flex items-center justify-center text-center text-white">
+          <div className="transform transition-all duration-500 group-hover:-translate-y-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-300 opacity-80 transition-opacity duration-500 group-hover:opacity-100">
+              Brian&apos;s General Merchandise
+            </p>
+
+            <h2 className="mt-4 text-3xl font-bold transition-all duration-500 group-hover:text-white">
+              Reliable Event Equipment Rental
+            </h2>
           </div>
+        </div>
+      </div>
         </motion.div>
       </div>
     </section>

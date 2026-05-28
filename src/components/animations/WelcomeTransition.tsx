@@ -140,7 +140,7 @@ export function WelcomeTransition() {
             className="absolute right-4 top-4 z-30 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-300 backdrop-blur-md transition hover:bg-white hover:text-black"
             aria-label="Skip welcome intro"
           >
-            Skip
+            
             <X className="size-4" aria-hidden="true" />
           </button>
 

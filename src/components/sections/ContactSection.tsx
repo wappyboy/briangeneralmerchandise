@@ -1,5 +1,6 @@
 import { Mail, MessageCircle, Phone } from "lucide-react";
 
+import { BookingRequestForm } from "@/components/booking/BookingRequestForm";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -33,7 +34,7 @@ export function ContactSection() {
       <SectionHeading
         eyebrow="Contact"
         title="Book Your Event or Request a Quotation"
-        description="Send your event details and rental needs. The full inquiry form and email sending will be added in Phase 9."
+        description="Send your event details and rental needs. Your request is saved with a booking reference and appears in the admin dashboard for review."
       />
 
       <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
@@ -60,15 +61,10 @@ export function ContactSection() {
         })}
       </div>
 
-      <div className="mx-auto mt-10 max-w-xl rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-center">
-        <p className="text-sm leading-6 text-neutral-300">
-          The inquiry form will include full name, contact number, email, event
-          type, event date, event location, and rental needs/message.
-        </p>
+      <BookingRequestForm />
 
-        <ButtonLink href="mailto:business@email.com" className="mt-6">
-          Send Inquiry by Email
-        </ButtonLink>
+      <div className="mx-auto mt-8 max-w-xl text-center">
+        <ButtonLink href="mailto:business@email.com">Send Inquiry by Email</ButtonLink>
       </div>
     </section>
   );
